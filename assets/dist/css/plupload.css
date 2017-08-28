@@ -1,0 +1,117 @@
+.preview .image-preview.file {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center center;
+    cursor: pointer;
+    position: relative;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    float: left;
+    clear: none;
+}
+
+.preview .already-upload,
+.preview .to-upload {
+    /*display: inline-block;*/
+}
+
+.preview .file {
+    display: block;
+    clear: both;
+}
+
+.image-preview img {
+    width: 100%;
+    object-fit: cover;
+    -o-object-fit: cover;
+    height: 100%;
+}
+
+.preview .image-preview:last-child {
+    margin-right: 0;
+}
+
+.preview .image-preview:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.preview .file .cancel {
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.preview .image-preview .cancel {
+    color: #fff;
+    font-size: 23px;
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.preview .image-preview .show-attributes-modal {
+    color: #fff;
+    font-size: 23px;
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    z-index: 999;
+}
+
+.preview .image-preview:hover .cancel,
+.preview .image-preview:hover .show-attributes-modal {
+    display: block;
+}
+
+.preview .file .cancel:hover {
+    transform: rotate(180deg);
+}
+
+.fileinput-button {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.fileinput-button input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 200px !important;
+    direction: ltr;
+    cursor: pointer;
+}
+
+/* Fixes for IE < 8 */
+@media screen\9 {
+    .fileinput-button input {
+        filter: alpha(opacity=0);
+        font-size: 100%;
+        height: 100%;
+    }
+}
+
+.plupload-progress {
+    background: url('/images/ajax-loader.gif') center center no-repeat;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
