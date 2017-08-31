@@ -60,7 +60,7 @@ class ThumbnailHelper extends Object
         $thumbFileName = $prefix . '_' . $filename;
         $sizes = ArrayHelper::getValue(self::getThumbs(), $prefix);
 
-        if (!file_exists($imagesDir . $thumbFileName) && ThumbnailHelper::generateImageThumbnail($imagesDir . $filename, $imagesDir . $thumbFileName, $sizes['width'], $sizes['height'], $sizes['cropAndCenter'])) {
+        if (file_exists($imagesDir . $thumbFileName) || ThumbnailHelper::generateImageThumbnail($imagesDir . $filename, $imagesDir . $thumbFileName, $sizes['width'], $sizes['height'], $sizes['cropAndCenter'])){
             return $thumbFileName;
         }
 
