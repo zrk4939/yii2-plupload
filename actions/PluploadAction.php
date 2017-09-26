@@ -9,7 +9,7 @@
 namespace zrk4939\widgets\plupload\actions;
 
 use zrk4939\widgets\plupload\components\ChunkUploader;
-use zrk4939\widgets\plupload\components\ImageOptimization;
+use zrk4939\helpers\ImageOptimization;
 use Yii;
 use yii\base\Action;
 use yii\helpers\ArrayHelper;
