@@ -13,6 +13,7 @@ use zrk4939\widgets\plupload\components\ImageOptimization;
 use Yii;
 use yii\base\Action;
 use yii\helpers\ArrayHelper;
+use yii\helpers\FileHelper;
 use yii\web\UploadedFile;
 use yii\web\Response;
 
