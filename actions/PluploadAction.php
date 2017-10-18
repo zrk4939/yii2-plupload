@@ -153,7 +153,14 @@ class PluploadAction extends Action
      */
     private function getTempFileName($params)
     {
-        $tempFile = $newFile = $this->getUnusedPath($this->tempPath . DIRECTORY_SEPARATOR . $params['name']);
+        if (mb_substr($this->tempPath, -1, 1, 'UTF-8') !== '/') {
+            $path = $this->tempPath . DIRECTORY_SEPARATOR . $params['name'];
+        } else {
+            $path = $this->tempPath . $params['name'];
+        }
+
+        $tempFile = $newFile = $this->getUnusedPath($path);
+
         if (!empty($params['url']) && $params['url'] != '0') {
             $uploadPath = Yii::getAlias('@approot' . $params['url']);
 
