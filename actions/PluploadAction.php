@@ -8,14 +8,14 @@
 
 namespace zrk4939\widgets\plupload\actions;
 
-use zrk4939\widgets\plupload\components\ChunkUploader;
-use zrk4939\helpers\ImageOptimization;
 use Yii;
 use yii\base\Action;
 use yii\helpers\ArrayHelper;
 use yii\helpers\FileHelper;
-use yii\web\UploadedFile;
 use yii\web\Response;
+use yii\web\UploadedFile;
+use zrk4939\helpers\ImageOptimization;
+use zrk4939\widgets\plupload\components\ChunkUploader;
 
 /**
  * Class PluploadAction
@@ -29,7 +29,7 @@ class PluploadAction extends Action
 
     public $rename = true;
     public $extensions = ['jpg', 'png'];
-    public $tempPath = '/uploads/temp';
+    public $tempPath = '@uploads/temp';
 
     protected $response = [
         'status' => 'ko',
@@ -65,7 +65,7 @@ class PluploadAction extends Action
     {
         parent::init();
 
-        $this->tempPath = Yii::getAlias('@approot' . $this->tempPath);
+        $this->tempPath = Yii::getAlias($this->tempPath);
 
         Yii::$app->response->format = Response::FORMAT_JSON;
         $this->tempPath = Yii::getAlias($this->tempPath);
