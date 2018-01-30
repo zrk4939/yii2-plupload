@@ -110,7 +110,7 @@
 }
 
 .plupload-progress {
-    background: url('/images/ajax-loader.gif') center center no-repeat;
+    background: url('../img/ajax-loader.gif') center center no-repeat;
     width: 100px;
     height: 100px;
     display: inline-block;
